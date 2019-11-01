@@ -1,4 +1,4 @@
-I"�<h1 id="如何理解-copula">如何理解 Copula</h1>
+I"�<h1 id="如何理解-copula">如何理解 Copula</h1>
 
 <blockquote>
   <p>Copula 到底有啥用？？？如何去理解？？？又如何应用到实际上呢？？？</p>
@@ -49,18 +49,19 @@
 
 <h3 id="sklar-定理"><a href="https://en.wikipedia.org/wiki/Copula_(probability_theory)#Sklar's_theorem">Sklar 定理</a></h3>
 
-<p>Every <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function#Multivariate_case">multivariate cumulative distribution function</a>  $ H(x_1, x_2, … ,x_d)=Pr[X_1\leq x_1, X_2 \leq x_2, …, X_d \leq x_d] $  of of a random vector $ (X_1, X_2, …, X_d) $ can be expressed in terms of its marginals $ F_i(x_i) = Pr[X_i \leq x_i] $ and a copula $ C$. Indeed:
-<script type="math/tex">\\
-H(x_1, x_2, ... ,x_d)=C(F_1(x_1), F_2(x_2), ..., F_d(x_d))
-\\</script>
-In case that the multivariate distribution has a density $h$ available, it holds further that
-<script type="math/tex">\\
-h(x_1, x_2, ... ,x_d)=
-c(F_1(x_1), F_2(x_2), ..., F_d(x_d)) \times f_1(x_1) \times f_2(x_2) \times \dots \times f_d(x_d)
-\\</script>
-where $ c$ is the density of the copula.</p>
+<p>Every <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function#Multivariate_case">multivariate cumulative distribution function</a>  $ H(x_1, x_2, … ,x_d)=Pr[X_1\leq x_1, X_2 \leq x_2, …, X_d \leq x_d] $  of of a random vector $ (X_1, X_2, …, X_d) $ can be expressed in terms of its marginals $ F_i(x_i) = Pr[X_i \leq x_i] $ and a copula $ C$. Indeed:</p>
+
+<script type="math/tex; mode=display">H(x_1, x_2, ... ,x_d)=C(F_1(x_1), F_2(x_2), ..., F_d(x_d))</script>
+
+<p>In case that the multivariate distribution has a density $h$ available, it holds further that</p>
+
+<script type="math/tex; mode=display">h(x_1, x_2, ... ,x_d)=
+c(F_1(x_1), F_2(x_2), ..., F_d(x_d)) \times f_1(x_1) \times f_2(x_2) \times \dots \times f_d(x_d)</script>
+
+<p>where $ c$ is the density of the copula.</p>
 
 <h3 id="意义">意义</h3>
 
-<p>通过 Sklar 定理，我们可以发现，Copula 函数把联合分布的</p>
+<p>通过 Sklar 定理，我们可以发现，Copula 函数把联合概率密度分布划分成了两个部分：关联性结构和边缘密度函数。也就是说，我们成功地把用于描述相关性的量从联合分布中抓了出来。</p>
+
 :ET
