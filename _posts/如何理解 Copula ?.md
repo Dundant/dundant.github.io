@@ -1,3 +1,14 @@
+layout:     post   				    # 使用的布局（不需要改）
+title:      如何理解 Copula 				# 标题 
+subtitle:   Copula and Applications in Finance #副标题
+date:       2019-11-01 				# 时间
+author:     Dundant 						# 作者
+header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
+catalog: true 						# 是否归档
+tags:								#标签
+
+    - 
+---
 ## 如何理解 Copula ？
 
 长期以来，针对数据间的相关性用**相关系数**去描述。但是，仔细想，这其中其实存在问题。
