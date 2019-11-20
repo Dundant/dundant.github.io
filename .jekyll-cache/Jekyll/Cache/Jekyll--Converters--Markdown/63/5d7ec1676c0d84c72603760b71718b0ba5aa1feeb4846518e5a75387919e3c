@@ -1,0 +1,114 @@
+I"8<blockquote>
+  <p>Copula 到底有啥用？？？如何去理解？？？又如何应用到实际上呢？？？</p>
+</blockquote>
+
+<h3 id="几种相关系数">几种相关系数</h3>
+<h4 id="pearson相关系数">Pearson相关系数</h4>
+<p>在学习数理统计的时候，最先接触到的描述相关性的量应该就是相关系数了。也就是Pearson相关系数。他的定义方法是：</p>
+
+<h4 id="spearman相关系数">Spearman相关系数</h4>
+
+<h4 id="kendall相关系数">Kendall相关系数</h4>
+
+<h3 id="概率积分变换"><a href="https://en.wikipedia.org/wiki/Probability_integral_transform">概率积分变换</a></h3>
+
+<p><strong>概率积分变换 ( Probability Integral Transform )</strong> 是把任意连续分布转换成一个标准均匀分布 ( Standard Uniform Distribution )，而不改变相关性的方法.</p>
+
+<h4 id="定义">定义</h4>
+
+<p>随机变量 $ X $ 服从任意连续分布，其累积分布函数 ( Cumulative Distribution Function ) 是 $ F_X(x) $ .  那么 $ U $ 服从标准均匀分布，如果 $ U $ 定义满足：</p>
+
+<script type="math/tex; mode=display">U = F_X(x)</script>
+
+<h4 id="证明">证明</h4>
+
+<p>略</p>
+
+<h4 id="相关性不变的证明">相关性不变的证明</h4>
+
+<p>未知</p>
+
+<h4 id="以防你好奇的事情">以防你好奇的事情</h4>
+
+<p>这个转换的操作明明跟积分没有任何关系，为啥要叫概率积分变换？？？</p>
+
+<p>这个到是很简单，$ U $ 是重新定义出的随机变量，也就是 $X$ 的概率密度函数的积分.  所以这实际上积分的转换.</p>
+
+<p>当然这里的积分是指 Lebesgue 积分，而不应该是 Riemann 积分.  这就是测度论的知识了.</p>
+
+<h3 id="copula-函数">Copula 函数</h3>
+
+<h4 id="定义-1">定义</h4>
+
+<p>两个随机变量 $ X , Y$ 都服从任意连续分布，那么经过概率积分变换得到的相对应的 $ U_1, U_2 $ 服从联合概率分布.  该联合概率分布的累积分布函数就是 Copula 函数.</p>
+
+<p>多元形式的 Copula 函数定义类似.</p>
+
+<h4 id="sklar-定理"><a href="https://en.wikipedia.org/wiki/Copula_(probability_theory)#Sklar's_theorem">Sklar 定理</a></h4>
+
+<p>（摘自英文维基百科 Copula 条目）</p>
+
+<p>Every <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function#Multivariate_case">multivariate cumulative distribution function</a>  $ H(x_1, x_2, … ,x_d)=Pr[X_1\leq x_1, X_2 \leq x_2, …, X_d \leq x_d] $  of of a random vector $ (X_1, X_2, …, X_d) $ can be expressed in terms of its marginals $ F_i(x_i) = Pr[X_i \leq x_i] $ and a copula $ C$. Indeed:</p>
+
+<script type="math/tex; mode=display">H(x_1, x_2, ... ,x_d)=C(F_1(x_1), F_2(x_2), ..., F_d(x_d))</script>
+
+<p>In case that the multivariate distribution has a density $h$ available, it holds further that</p>
+
+<script type="math/tex; mode=display">h(x_1, x_2, ... ,x_d)=
+c(F_1(x_1), F_2(x_2), ..., F_d(x_d)) \times f_1(x_1) \times f_2(x_2) \times \dots \times f_d(x_d)</script>
+
+<p>where $ c$ is the density of the copula.</p>
+
+<p>翻译一下就是：</p>
+
+<p>一个随机向量 $ (X_1, X_2, …, X_d) $ 的多元联合累计分布函数 $ H(x_1, x_2, … ,x_d)=Pr[X_1\leq x_1, X_2 \leq x_2, …, X_d \leq x_d] $ 可以用每一个边缘分布函数和 Copula 函数表示为：</p>
+
+<script type="math/tex; mode=display">H(x_1, x_2, ... ,x_d)=C(F_1(x_1), F_2(x_2), ..., F_d(x_d))</script>
+
+<p>同时，如果该多远联合累计分布存在联合密度函数 $h$ . 下式成立：</p>
+
+<script type="math/tex; mode=display">h(x_1, x_2, ... ,x_d)=
+c(F_1(x_1), F_2(x_2), ..., F_d(x_d)) \times f_1(x_1) \times f_2(x_2) \times \dots \times f_d(x_d)</script>
+
+<p>其中 $c$ 是 Copula 分布函数的密度函数.</p>
+
+<h4 id="证明-1">证明</h4>
+
+<p>略</p>
+
+<h4 id="意义">意义</h4>
+
+<p>通过 Sklar 定理，我们可以发现，Copula 函数把联合概率密度分布划分成了两个部分：关联性结构和边缘密度函数.  也就是说，我们成功地把用于描述相关性的量从联合分布中抓了出来.</p>
+
+<h4 id="几种常用的-copula-函数">几种常用的 Copula 函数</h4>
+
+<h3 id="copula-在投资品风险管理中的应用">Copula 在投资品风险管理中的应用</h3>
+
+<h4 id="代码实现-python">代码实现-Python</h4>
+
+<h3 id="参考资料">参考资料</h3>
+
+<ol>
+  <li>Farzia Habiboellah 的硕士论文 Copulas: Modeling dependencies in Financial Risk Management. 当时作者在荷兰阿姆斯特丹的 Vrije Universiteit 大学攻读 Business Mathematics and Informatics 硕士学位. 成文之后被大学数学系收录在<a href="https://www.math.vu.nl/~sbhulai/papers/paper-habiboellah.pdf">网站上</a>.</li>
+  <li><a href="http://www.fin.kuas.edu.tw/download.php?filename=1910_a2a8d9e7.ppt&amp;dir=community_forum/636&amp;title=copula">臺灣國立高雄科技大學金融資訊系關於 Copula Function 的講解講義</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Copula_(probability_theory)">英文维基百科 Copula 条目</a>. （另外说一句：在正式论文中用维基百科作为参考资料一定会被导师骂一顿. . . ）</li>
+</ol>
+
+<h3 id="中英术语对照">中英术语对照</h3>
+
+<p>概率论名词的中文翻译在各个中文教材都略有不同，我也并没有理清其中的细节，所以名词以英文为准.</p>
+
+<ul>
+  <li>累计分布函数 Cumulative Distribution Function</li>
+  <li>概率密度函数 Distribution Density Function</li>
+  <li>概率积分变换 Probability Integral Transform</li>
+  <li>耦合函数 Copula Function</li>
+  <li>黎曼积分 Riemann Integral</li>
+  <li>勒贝格积分 Lebesgue Integral</li>
+  <li>测度论 Measure Theory</li>
+  <li>多元联合累计分布函数 Multivariate Cumulative Distribution Function</li>
+  <li>边缘分布 Marginal Distribution</li>
+  <li>边缘概率密度函数 Marginal Probability Density Function</li>
+  <li>Sklar 定理 Sklar’s Theorem</li>
+</ul>
+:ET
